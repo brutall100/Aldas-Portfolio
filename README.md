@@ -1,7 +1,7 @@
 # Aldas Kšeškauskas
 
-**Email**: [Contact me](mailto:aldas.kse@gmail.com)  
-**LinkedIn**: [View my profile](https://www.linkedin.com/in/aldas-kšenkauskas-0995982b4)
+**Email**: aldas.kse@gmail.com
+**LinkedIn**: https://www.linkedin.com/in/aldas-kšenkauskas-0995982b4
 
 ---
 
