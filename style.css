@@ -203,8 +203,15 @@ body {
     color: #ffcc4d;
 }
 
+.project-card h4 {
+    font-size: .8rem;
+    font-weight: 100;
+    color: #9f9f9f;
+}
+
 .project-card p {
     font-size: 1rem;
+    line-height: 1.6;
     flex-grow: 1;
 }
 
