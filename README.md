@@ -1,6 +1,6 @@
 # Aldas Kšečkauskas — Portfolio
 
-Source for [aldasportfolio.site](https://aldasportfolio.site).
+Source for [aldas-portfolio.site](https://aldas-portfolio.site).
 
 ## About this site
 A single-page portfolio built with **no frameworks and no build step** — plain

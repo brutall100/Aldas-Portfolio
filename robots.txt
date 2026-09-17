@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /cv/
 
-Sitemap: https://aldasportfolio.site/sitemap.xml
+Sitemap: https://aldas-portfolio.site/sitemap.xml
