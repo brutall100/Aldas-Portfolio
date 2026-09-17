@@ -1,4 +1,4 @@
-# Aldas Kšeškauskas — Portfolio
+# Aldas Kšečkauskas — Portfolio
 
 Source for [aldasportfolio.site](https://aldasportfolio.site).
 
@@ -27,7 +27,7 @@ img/          optimised project and profile images
 ---
 
 **Email**: aldas.kse@gmail.com
-**LinkedIn**: https://www.linkedin.com/in/aldas-kšenkauskas-0995982b4
+**LinkedIn**: https://www.linkedin.com/in/aldas-kseckauskas-111955307/
 
 ---
 

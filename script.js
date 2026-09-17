@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   Aldas Kšeškauskas — Portfolio interactions
+   Aldas Kšečkauskas — Portfolio interactions
    No dependencies. Everything degrades gracefully.
    ═══════════════════════════════════════════════════════════ */
 (function () {
