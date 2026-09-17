@@ -110,8 +110,7 @@ p { margin: 0; }
 }
 /* solid brand marks draw with fill, not stroke */
 .social-link .icon path[d^="M12 2a10"],
-.social-link .icon path[d^="M4.98"],
-.social-link .icon path[d^="M22 12a10"] { fill: currentColor; stroke: none; }
+.social-link .icon path[d^="M4.98"] { fill: currentColor; stroke: none; }
 
 .skip-link {
   position: absolute;
