@@ -17,6 +17,11 @@ HTML, CSS and JavaScript, served as static files.
 Run it locally with any static server, e.g. `python3 -m http.server`, then open
 <http://localhost:8000>.
 
+## Deploying
+Upload `index.html`, `style.css`, `script.js`, `img/`, `CV_Aldas.pdf` and
+`.htaccess`. The `cv/` folder is build-only and is not needed on the server —
+`.htaccess` returns 404 for it anyway, so an accidental upload stays private.
+
 ```
 index.html    markup and content
 style.css     design tokens, layout, animations

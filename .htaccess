@@ -1,0 +1,36 @@
+# ════════════════════════════════════════════════════════════════
+#  aldasportfolio.site — Apache / LiteSpeed configuration
+#  Hosting note: this file only takes effect on Apache-style hosts
+#  (Hostinger is one). It is ignored by GitHub Pages and by nginx.
+# ════════════════════════════════════════════════════════════════
+
+# ── Keep build-only files off the live site ─────────────────────
+# cv/ holds the CV source, fonts and licenses. It is only needed on a
+# local machine when regenerating CV_Aldas.pdf, so nothing inside it
+# should be reachable from the web. 404 rather than 403, so the folder
+# does not even announce that it exists.
+RedirectMatch 404 ^/cv(/|$)
+
+# Hidden files and folders (.git, .gitignore, editor leftovers).
+# The well-known exception keeps future SSL and verification files working.
+RedirectMatch 404 /\.(?!well-known)
+
+# Repo paperwork that is not part of the site.
+<FilesMatch "^(README\.md|package(-lock)?\.json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# ── No directory browsing ───────────────────────────────────────
+# Without this, a visitor opening /img/ gets a listing of every file.
+# If the host forbids this directive the site returns 500 — delete the
+# line if that happens.
+Options -Indexes
+
+# ── Default document ────────────────────────────────────────────
+DirectoryIndex index.html
