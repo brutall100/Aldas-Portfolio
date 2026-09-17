@@ -976,21 +976,36 @@ p { margin: 0; }
   color: var(--text-faint) !important;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: auto;
-  padding-top: 6px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated-2);
   font-family: var(--font-head);
-  font-size: .92rem;
+  font-size: .87rem;
   font-weight: 600;
   color: var(--accent-2);
-  transition: gap .3s var(--ease);
+  transition: transform .3s var(--ease), border-color .3s var(--ease),
+              color .3s var(--ease), gap .3s var(--ease);
 }
-.project-card:hover .project-link { gap: 14px; }
-.project-link-muted { color: var(--text-faint); }
-.is-wip { cursor: default; }
+.project-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-2);
+  gap: 12px;
+}
+.project-link-alt { color: var(--text-muted); }
+.project-link-alt:hover { color: var(--text); border-color: var(--border-strong); }
 
 /* ── 7. CONTACT & FOOTER ──────────────────────────────────── */
 .section-contact { padding-bottom: clamp(80px, 10vw, 120px); }
