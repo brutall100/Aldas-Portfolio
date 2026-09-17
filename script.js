@@ -164,9 +164,9 @@
   var rotator = document.getElementById('rotator');
   if (rotator && !reduceMotion) {
     var roles = [
-      'Front-End Developer',
-      'Back-End Learner',
-      'React Enthusiast',
+      'Full-Stack Developer',
+      'TypeScript Developer',
+      'Next.js Builder',
       'Problem Solver'
     ];
     var i = 0;

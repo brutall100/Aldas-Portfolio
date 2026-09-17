@@ -228,7 +228,7 @@
 
   <header>
     <h1>Aldas Kšečkauskas</h1>
-    <p class="role">Junior Web Developer</p>
+    <p class="role">Full-Stack Web Developer</p>
     <div class="contacts">
       <span><b>Email</b>aldas.kse@gmail.com</span>
       <span><b>Location</b>Lithuania</span>
@@ -243,16 +243,35 @@
       <section>
         <h2>Profile</h2>
         <p class="summary">
-          Motivated junior programmer transitioning from a technical background in CNC
-          operations to software development. Proficient in web technologies including
-          HTML, CSS, JavaScript, React, Node.js, MySQL and MongoDB. Adept at
-          problem-solving and delivering high-quality coding solutions, and eager to
-          contribute to a team while growing in a dynamic programming role.
-        </p>
+          Full-stack web developer building production applications with TypeScript and
+          Next.js — a four-language storefront with Stripe checkout and an admin panel, and
+          a dependency-free PWA on Deno. Eighteen years of CNC programming before that, which
+          is where the working habits came from: read the specification properly, debug
+          patiently, ship on the date. Comfortable owning a feature from the database schema
+          through to the interface.</p>
       </section>
 
       <section>
         <h2>Selected Projects</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Vinica — grapevine seedling shop</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <p class="entry-sub">github.com/brutall100/vinica-shop</p>
+          <p>Multilingual e-commerce store (LT / EN / RU / PL) with fully localised URLs. Stripe checkout, Auth.js-protected admin panel, product, order and inventory models in PostgreSQL via Prisma, transactional email, image uploads and full SEO with JSON-LD.</p>
+          <div class="tags"><span>Next.js 16</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>Stripe</span><span>Tailwind</span></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Nuoga Siela — anonymous writing space</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <p class="entry-sub">nuogasiela.lt</p>
+          <p>A place to write out what you feel and then either burn the text, which never leaves the browser, or release it anonymously with a chosen lifetime. Server-side spam and personal-data filtering, crisis-word detection that surfaces help, rate limiting and unit tests — built as a PWA with zero dependencies.</p>
+          <div class="tags"><span>Deno</span><span>Deno KV</span><span>TypeScript</span><span>PWA</span><span>Testing</span></div>
+        </div>
 
         <div class="entry">
           <div class="entry-head">
@@ -260,57 +279,19 @@
             <span class="entry-date">2022 — Present</span>
           </div>
           <p class="entry-sub">viktorina.live</p>
-          <p>
-            Created a live, interactive quiz platform where users test their knowledge,
-            compete in trivia challenges and earn virtual currency. Combines real-time
-            gameplay with a responsive interface.
-          </p>
+          <p>A live quiz platform where players join in real time, compete in trivia rounds and earn virtual currency.</p>
           <div class="tags"><span>JavaScript</span><span>Node.js</span><span>Real-time</span></div>
         </div>
 
         <div class="entry">
           <div class="entry-head">
             <span class="entry-title">Week Menu</span>
-            <span class="entry-date">2024 — Present</span>
-          </div>
-          <p class="entry-sub">weekmeniu.netlify.app</p>
-          <p>
-            A meal-planning web app with a REST API for categories, meals, ingredients and
-            stories. Users add their own meals and the app suggests daily options for the
-            week ahead.
-          </p>
-          <div class="tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>REST API</span></div>
-        </div>
-
-        <div class="entry">
-          <div class="entry-head">
-            <span class="entry-title">Personal Portfolio Website</span>
-            <span class="entry-date">2024 — Present</span>
-          </div>
-          <p class="entry-sub">aldasportfolio.site</p>
-          <p>
-            Designed and built a responsive portfolio from scratch with no framework,
-            featuring a custom design system, light and dark themes and scroll-driven
-            animations.
-          </p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-        </div>
-
-        <div class="entry">
-          <div class="entry-head">
-            <span class="entry-title">Awesome UI</span>
             <span class="entry-date">2024</span>
           </div>
-          <p class="entry-sub">brutall100.github.io/Awsome-ui-main</p>
-          <p>
-            A responsive interface showcase with clean layout, interactive elements and
-            sections for navigation, services and testimonials. Built to practise advanced
-            CSS and modern design patterns.
-          </p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>Animation</span></div>
+          <p class="entry-sub">weekmeniu.netlify.app</p>
+          <p>A meal-planning app with a REST API for categories, meals, ingredients and stories. Users add their own meals and the app suggests options for the week ahead.</p>
+          <div class="tags"><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
         </div>
-
-
       </section>
     </div>
 
@@ -319,27 +300,27 @@
         <h2>Technical Skills</h2>
         <div class="skill-group">
           <h3>Front-End</h3>
-          <p>HTML, CSS, JavaScript, React</p>
+          <p>TypeScript, JavaScript, React, Next.js, Tailwind CSS, HTML, CSS</p>
         </div>
         <div class="skill-group">
           <h3>Back-End</h3>
-          <p>Node.js, Express, PhpMyAdmin</p>
+          <p>Node.js, Deno, Express, REST API, Auth.js</p>
         </div>
         <div class="skill-group">
           <h3>Databases</h3>
-          <p>MySQL, MongoDB</p>
+          <p>PostgreSQL, Prisma, MongoDB, MySQL, Deno KV</p>
         </div>
         <div class="skill-group">
-          <h3>Tools</h3>
-          <p>Git, npm, REST API, Postman</p>
+          <h3>Services</h3>
+          <p>Stripe, Resend, Vercel, Render, MongoDB Atlas</p>
         </div>
         <div class="skill-group">
-          <h3>Platforms</h3>
-          <p>Render, MongoDB Atlas</p>
+          <h3>Practices</h3>
+          <p>Git, CI/CD, testing, i18n, SEO, accessibility</p>
         </div>
       </section>
 
-      <section>
+            <section>
         <h2>Languages</h2>
         <div class="lang"><b>Lithuanian</b><span>Native</span></div>
         <div class="lang"><b>English</b><span>Intermediate</span></div>
@@ -359,7 +340,7 @@
   </div>
 
   <div class="foot">
-    <span>Aldas Kšečkauskas — Junior Web Developer</span>
+    <span>Aldas Kšečkauskas — Full-Stack Web Developer</span>
     <span>Page 1 of 2</span>
   </div>
 </div>
@@ -375,13 +356,20 @@
         <h2>Projects (continued)</h2>
         <div class="entry">
           <div class="entry-head">
+            <span class="entry-title">Personal Portfolio</span>
+            <span class="entry-date">2024 — Present</span>
+          </div>
+          <p class="entry-sub">aldasportfolio.site</p>
+          <p>A responsive portfolio built from scratch with no framework — custom design system, light and dark themes, scroll-driven animation and optimised assets.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
             <span class="entry-title">To-Do Management App</span>
             <span class="entry-date">2024 — Present</span>
           </div>
-          <p>
-            A task manager with full create, edit and delete functionality — React on the
-            front end, Node.js and MongoDB behind it. Currently in active development.
-          </p>
+          <p>A React task manager with full create, edit and delete functionality, Node.js and MongoDB behind it. In active development.</p>
           <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
         </div>
       </section>
@@ -479,7 +467,7 @@
   </div>
 
   <div class="foot">
-    <span>Aldas Kšečkauskas — Junior Web Developer</span>
+    <span>Aldas Kšečkauskas — Full-Stack Web Developer</span>
     <span>Page 2 of 2</span>
   </div>
 </div>

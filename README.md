@@ -37,16 +37,17 @@ img/          optimised project and profile images
 ---
 
 ## Professional Summary
-Motivated junior programmer with foundational knowledge in HTML, CSS, JavaScript, React, Node.js, MySQL, and MongoDB. Transitioning from CNC operation to software development, I am eager to leverage my technical background and strong problem-solving skills in a programming role. Passionate about technology, self-improvement, and delivering high-quality solutions.
+Full-stack web developer building production applications with TypeScript and Next.js — a four-language storefront with Stripe checkout and an admin panel, and a dependency-free PWA on Deno. Eighteen years of CNC programming before that, which is where the working habits came from: read the specification properly, debug patiently, ship on the date.
 
 ---
 
 ## Technical Skills
-- **Front-End**: HTML, CSS, JavaScript, React  
-- **Back-End**: Node.js  
-- **Databases**: MySQL, MongoDB  
-- **Programming Tools**: Git, npm, REST API  
-- **Software Tools**: WoodWOP, CNC operation systems
+- **Front-End**: TypeScript, JavaScript, React, Next.js, Tailwind CSS, HTML, CSS
+- **Back-End**: Node.js, Deno, Express, REST API, Auth.js
+- **Databases**: PostgreSQL, Prisma, MongoDB, MySQL, Deno KV
+- **Services**: Stripe, Resend, Vercel, Render, MongoDB Atlas
+- **Practices**: Git, CI/CD, testing, i18n, SEO, accessibility
+- **Industrial**: WoodWOP, CNC operation systems
 
 ---
 
