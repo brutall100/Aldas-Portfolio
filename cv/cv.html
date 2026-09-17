@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aldas Kšečkauskas — CV</title>
+<meta name="author" content="Aldas Kšečkauskas">
+<style>
+  @font-face { font-family: Inter; src: url(fonts/inter-400.ttf); font-weight: 400; }
+  @font-face { font-family: Inter; src: url(fonts/inter-500.ttf); font-weight: 500; }
+  @font-face { font-family: Inter; src: url(fonts/inter-600.ttf); font-weight: 600; }
+  @font-face { font-family: Inter; src: url(fonts/inter-700.ttf); font-weight: 700; }
+  @font-face { font-family: Grotesk; src: url(fonts/grotesk-600.ttf); font-weight: 600; }
+  @font-face { font-family: Grotesk; src: url(fonts/grotesk-700.ttf); font-weight: 700; }
+
+  :root {
+    --accent: #5b4bd6;
+    --accent-soft: #eceafb;
+    --ink: #16182b;
+    --body: #3d4158;
+    --muted: #7b8098;
+    --rule: #e2e4ee;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Inter, sans-serif;
+    font-size: 9.2pt;
+    line-height: 1.5;
+    color: var(--body);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Each sheet is a fixed box we lay out by hand, so the print engine never
+     has to split a flex column across pages. */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 0 14mm 14mm;
+    position: relative;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: page;
+    page-break-after: always;
+  }
+  .page:last-of-type { break-after: auto; page-break-after: auto; }
+
+  /* thin gradient bar, echoing the portfolio */
+  .topbar {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4mm;
+    background: linear-gradient(90deg, #5b4bd6, #22a7c4 55%, #d65b9a);
+  }
+
+  /* ── header ───────────────────────────────────────── */
+  header { padding-top: 15mm; }
+
+  h1 {
+    font-family: Grotesk, sans-serif;
+    font-weight: 700;
+    font-size: 25pt;
+    letter-spacing: -0.5pt;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .role {
+    font-family: Grotesk, sans-serif;
+    font-weight: 600;
+    font-size: 11pt;
+    color: var(--accent);
+    margin-top: 1.5mm;
+  }
+
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 4mm;
+    margin-top: 4mm;
+    padding-top: 3.5mm;
+    border-top: 0.5pt solid var(--rule);
+    font-size: 8.1pt;
+    color: var(--body);
+  }
+  .contacts span { white-space: nowrap; }
+  .contacts b { font-weight: 600; color: var(--muted); margin-right: 0.9mm; }
+
+  /* ── two-column body ──────────────────────────────── */
+  .cols {
+    display: flex;
+    gap: 9mm;
+    margin-top: 7mm;
+    align-items: flex-start;
+  }
+  .main { flex: 1 1 auto; }
+  .side { width: 56mm; flex: none; }
+
+  h2 {
+    font-family: Grotesk, sans-serif;
+    font-weight: 700;
+    font-size: 8.2pt;
+    letter-spacing: 1.1pt;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 1.6mm;
+    border-bottom: 1pt solid var(--accent-soft);
+    margin-bottom: 3.2mm;
+  }
+  section + section { margin-top: 6mm; }
+
+  .summary { font-size: 9.4pt; line-height: 1.6; }
+
+  /* entries */
+  .entry + .entry { margin-top: 4.2mm; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4mm;
+  }
+  .entry-title {
+    font-family: Grotesk, sans-serif;
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--ink);
+  }
+  .entry-date {
+    font-size: 8.2pt;
+    font-weight: 500;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .entry-sub {
+    font-size: 8.4pt;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 0.4mm;
+  }
+  .entry p { margin-top: 1.2mm; }
+
+  ul { list-style: none; margin-top: 1.5mm; }
+  ul li {
+    position: relative;
+    padding-left: 4mm;
+    margin-top: 1mm;
+  }
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0.6mm;
+    top: 1.55mm;
+    width: 1.5mm;
+    height: 1.5mm;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: .45;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm;
+    margin-top: 1.8mm;
+  }
+  .tags span {
+    padding: 0.6mm 2mm;
+    border-radius: 6pt;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 7.8pt;
+    font-weight: 500;
+  }
+
+  /* sidebar */
+  .skill-group + .skill-group { margin-top: 3mm; }
+  .skill-group h3 {
+    font-size: 8.6pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.8mm;
+  }
+  .skill-group p { font-size: 8.8pt; }
+
+  .lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.1mm 0;
+  }
+  .lang + .lang { border-top: 0.5pt solid var(--rule); }
+  .lang b { font-weight: 500; color: var(--ink); font-size: 8.8pt; }
+  .lang span { font-size: 8pt; color: var(--muted); }
+
+  .edu + .edu { margin-top: 3mm; }
+  .edu-name {
+    font-weight: 600;
+    font-size: 8.8pt;
+    color: var(--ink);
+  }
+  .edu-meta { font-size: 8pt; color: var(--muted); margin-bottom: 0.6mm; }
+  .edu p { font-size: 8.4pt; }
+
+  .foot {
+    position: absolute;
+    left: 14mm;
+    right: 14mm;
+    bottom: 7mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.6pt;
+    color: var(--muted);
+    border-top: 0.5pt solid var(--rule);
+    padding-top: 2mm;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+<div class="page">
+  <div class="topbar"></div>
+
+  <header>
+    <h1>Aldas Kšečkauskas</h1>
+    <p class="role">Junior Web Developer</p>
+    <div class="contacts">
+      <span><b>Email</b>aldas.kse@gmail.com</span>
+      <span><b>Location</b>Lithuania</span>
+      <span><b>LinkedIn</b>linkedin.com/in/aldas-kseckauskas</span>
+      <span><b>GitHub</b>github.com/brutall100</span>
+    </div>
+  </header>
+
+  <div class="cols">
+    <div class="main">
+
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">
+          Motivated junior programmer transitioning from a technical background in CNC
+          operations to software development. Proficient in web technologies including
+          HTML, CSS, JavaScript, React, Node.js, MySQL and MongoDB. Adept at
+          problem-solving and delivering high-quality coding solutions, and eager to
+          contribute to a team while growing in a dynamic programming role.
+        </p>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Viktorina.live</span>
+            <span class="entry-date">2022 — Present</span>
+          </div>
+          <p class="entry-sub">viktorina.live</p>
+          <p>
+            Created a live, interactive quiz platform where users test their knowledge,
+            compete in trivia challenges and earn virtual currency. Combines real-time
+            gameplay with a responsive interface.
+          </p>
+          <div class="tags"><span>JavaScript</span><span>Node.js</span><span>Real-time</span></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Week Menu</span>
+            <span class="entry-date">2024 — Present</span>
+          </div>
+          <p class="entry-sub">weekmeniu.netlify.app</p>
+          <p>
+            A meal-planning web app with a REST API for categories, meals, ingredients and
+            stories. Users add their own meals and the app suggests daily options for the
+            week ahead.
+          </p>
+          <div class="tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>REST API</span></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Personal Portfolio Website</span>
+            <span class="entry-date">2024 — Present</span>
+          </div>
+          <p class="entry-sub">aldasportfolio.site</p>
+          <p>
+            Designed and built a responsive portfolio from scratch with no framework,
+            featuring a custom design system, light and dark themes and scroll-driven
+            animations.
+          </p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Awesome UI</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <p class="entry-sub">brutall100.github.io/Awsome-ui-main</p>
+          <p>
+            A responsive interface showcase with clean layout, interactive elements and
+            sections for navigation, services and testimonials. Built to practise advanced
+            CSS and modern design patterns.
+          </p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>Animation</span></div>
+        </div>
+
+
+      </section>
+    </div>
+
+    <aside class="side">
+      <section>
+        <h2>Technical Skills</h2>
+        <div class="skill-group">
+          <h3>Front-End</h3>
+          <p>HTML, CSS, JavaScript, React</p>
+        </div>
+        <div class="skill-group">
+          <h3>Back-End</h3>
+          <p>Node.js, Express, PhpMyAdmin</p>
+        </div>
+        <div class="skill-group">
+          <h3>Databases</h3>
+          <p>MySQL, MongoDB</p>
+        </div>
+        <div class="skill-group">
+          <h3>Tools</h3>
+          <p>Git, npm, REST API, Postman</p>
+        </div>
+        <div class="skill-group">
+          <h3>Platforms</h3>
+          <p>Render, MongoDB Atlas</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <div class="lang"><b>Lithuanian</b><span>Native</span></div>
+        <div class="lang"><b>English</b><span>Intermediate</span></div>
+        <div class="lang"><b>Russian</b><span>Basic</span></div>
+      </section>
+
+      <section>
+        <h2>Strengths</h2>
+        <ul>
+          <li>Precision and attention to specification</li>
+          <li>Patient, methodical debugging</li>
+          <li>Self-directed, continuous learning</li>
+          <li>Reliable under production deadlines</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <div class="foot">
+    <span>Aldas Kšečkauskas — Junior Web Developer</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- ══════════ PAGE 2 ══════════ -->
+<div class="page">
+  <div class="topbar"></div>
+
+  <div class="cols" style="margin-top: 15mm;">
+    <div class="main">
+
+      <section>
+        <h2>Projects (continued)</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">To-Do Management App</span>
+            <span class="entry-date">2024 — Present</span>
+          </div>
+          <p>
+            A task manager with full create, edit and delete functionality — React on the
+            front end, Node.js and MongoDB behind it. Currently in active development.
+          </p>
+          <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">CNC Operator</span>
+            <span class="entry-date">2007 — Present</span>
+          </div>
+          <p class="entry-sub">Holzher PRO Master 7123K · Weeke Optimat BP85 · Homag Venture 316L</p>
+          <ul>
+            <li>Developed and executed machine programs in WoodWOP, applying programming
+              logic and technical precision to production runs.</li>
+            <li>Diagnosed and resolved mechanical and programming faults, working through
+              problems analytically under time pressure.</li>
+            <li>Carried out quality checks and optimised workflows, improving efficiency
+              and accuracy across operations.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education &amp; Training</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Code Academy</span>
+            <span class="entry-date">2024-05 — 2024-12</span>
+          </div>
+          <p class="entry-sub">Front-End and Back-End Programming</p>
+          <p>
+            Comprehensive training in web technologies including HTML, CSS, JavaScript,
+            React, Node.js, MySQL and MongoDB. Built and deployed a portfolio website and
+            API integration applications.
+          </p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">freeCodeCamp</span>
+            <span class="entry-date">2022</span>
+          </div>
+          <p class="entry-sub">Web Development Certification</p>
+          <p>
+            Certified in responsive web design, JavaScript algorithms and data structures,
+            with interactive projects applying real-world development practices.
+          </p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">W3Schools</span>
+            <span class="entry-date">2021</span>
+          </div>
+          <p class="entry-sub">Self-Paced Web Development Training</p>
+          <p>
+            Tutorials and exercises across web development fundamentals — HTML, CSS,
+            JavaScript and backend concepts — building a foundation in coding best
+            practices.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="side">
+      <section>
+        <h2>Interests</h2>
+        <ul>
+          <li>Building side projects and experimenting with new frameworks</li>
+          <li>AI and emerging technologies</li>
+          <li>Reading and continuous self-study</li>
+          <li>Fishing and time outdoors</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <div class="skill-group">
+          <h3>Portfolio</h3>
+          <p>aldasportfolio.site</p>
+        </div>
+        <div class="skill-group">
+          <h3>GitHub</h3>
+          <p>github.com/brutall100</p>
+        </div>
+        <div class="skill-group">
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/aldas-kseckauskas</p>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="foot">
+    <span>Aldas Kšečkauskas — Junior Web Developer</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>

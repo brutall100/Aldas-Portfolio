@@ -27,7 +27,7 @@ img/          optimised project and profile images
 ---
 
 **Email**: aldas.kse@gmail.com
-**LinkedIn**: https://www.linkedin.com/in/aldas-kseckauskas-111955307/
+**LinkedIn**: https://www.linkedin.com/in/aldas-kseckauskas
 
 ---
 
