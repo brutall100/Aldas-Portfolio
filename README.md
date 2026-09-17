@@ -1,4 +1,30 @@
-# Aldas Kšeškauskas
+# Aldas Kšeškauskas — Portfolio
+
+Source for [aldasportfolio.site](https://aldasportfolio.site).
+
+## About this site
+A single-page portfolio built with **no frameworks and no build step** — plain
+HTML, CSS and JavaScript, served as static files.
+
+| | |
+| --- | --- |
+| **Layout** | CSS Grid + Flexbox, fluid `clamp()` type, mobile-first breakpoints |
+| **Theming** | CSS custom properties, dark default + light toggle saved to `localStorage` |
+| **Motion** | `IntersectionObserver` scroll reveals, shimmer sweeps, animated aurora background |
+| **A11y** | Skip link, focus-visible rings, ARIA state on the menu/toggle, `prefers-reduced-motion` support |
+| **Perf** | Optimised WebP images, lazy loading, explicit dimensions, zero JS dependencies |
+
+Run it locally with any static server, e.g. `python3 -m http.server`, then open
+<http://localhost:8000>.
+
+```
+index.html    markup and content
+style.css     design tokens, layout, animations
+script.js     theme, menu, scroll reveal, progress bar
+img/          optimised project and profile images
+```
+
+---
 
 **Email**: aldas.kse@gmail.com
 **LinkedIn**: https://www.linkedin.com/in/aldas-kšenkauskas-0995982b4
