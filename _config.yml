@@ -1,0 +1,15 @@
+# GitHub Pages build settings.
+#
+# Pages runs Jekyll over the repository before publishing. Nothing here uses
+# Jekyll's templating — the site is plain HTML — but the exclude list is what
+# keeps build-only files off the published site, the job .htaccess does on
+# Apache hosting. Jekyll already skips dotfiles, so .htaccess itself is never
+# served either.
+exclude:
+  - cv/          # CV source, fonts and licences — only needed locally
+  - README.md
+  - .htaccess    # Apache-only; inert on Pages, listed here to be explicit
+
+# Keep Jekyll from touching anything: no layouts, no Liquid rendering of the
+# page. Files are copied through as they are.
+plugins: []

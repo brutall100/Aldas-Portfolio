@@ -18,9 +18,13 @@ Run it locally with any static server, e.g. `python3 -m http.server`, then open
 <http://localhost:8000>.
 
 ## Deploying
-Upload `index.html`, `style.css`, `script.js`, `img/`, `CV_Aldas.pdf` and
-`.htaccess`. The `cv/` folder is build-only and is not needed on the server —
-`.htaccess` returns 404 for it anyway, so an accidental upload stays private.
+The site is served by GitHub Pages from `main`, so a push to `main` is the
+deploy — there is nothing to upload. `CNAME` holds the custom domain and
+`_config.yml` keeps `cv/`, `README.md` and `.htaccess` off the published site.
+
+`.htaccess` is inert on Pages and is kept only for Apache hosting. To move the
+site to Apache instead, upload `index.html`, `style.css`, `script.js`, `img/`,
+`CV_Aldas.pdf`, `robots.txt`, `sitemap.xml` and `.htaccess`; leave `cv/` out.
 
 ```
 index.html    markup and content

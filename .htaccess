@@ -1,7 +1,10 @@
 # ════════════════════════════════════════════════════════════════
-#  aldasportfolio.site — Apache / LiteSpeed configuration
-#  Hosting note: this file only takes effect on Apache-style hosts
-#  (Hostinger is one). It is ignored by GitHub Pages and by nginx.
+#  aldas-portfolio.site — Apache / LiteSpeed configuration
+#
+#  NOT USED while the site is served from GitHub Pages: Pages is not
+#  Apache and ignores this file entirely. _config.yml does the same job
+#  there. Kept for the day the site moves to Apache hosting such as
+#  Hostinger, where it takes effect again with no changes.
 # ════════════════════════════════════════════════════════════════
 
 # ── Keep build-only files off the live site ─────────────────────
